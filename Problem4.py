@@ -1,7 +1,12 @@
-class Problem4:
+import ProblemBase
+
+class Problem4(ProblemBase.ProblemBase):
 	
 	def __init__(this):
 		this._attempts = {1:this.AttemptOne,2:this.AttemptTwo}		
+
+	def GetAttempts(this):
+		return this._attempts
 
 	def Reverse(this,n):
 		reverse=0
@@ -37,15 +42,7 @@ class Problem4:
 			a-=1
 		return False
 
-	def Run(this):
-		print "Please choose from the following attempts to run:"
-		for attempt in this._attempts.keys():
-			print attempt
-		attemptSelection = input("Attempt to run: ")
-		this.RunAttempt(attemptSelection)	
 
-	def RunAttempt(this, attemptNumber):
-		this._attempts[attemptNumber]()
 
 	def AttemptOne(this):
 		testNumber = 999*999
